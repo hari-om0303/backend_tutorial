@@ -1,0 +1,2 @@
+Decision-making in programming is similar to real-life decision-making. We often want certain blocks of code to execute only when specific conditions are met. In Java, this is achieved using decision-making statements that control the flow of execution.
+In Java, the following decision-making statements are available
