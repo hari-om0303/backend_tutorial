@@ -1,4 +1,4 @@
-// // How to use command line arguments in Node JS. Like node index.js 3 2 - how can I get 3 and 2 to be used in my programs. 
+// //Q. How to use command line arguments in Node JS. Like node index.js 3 2 - how can I get 3 and 2 to be used in my programs. 
 
 // const args1 = process.argv[3];
 // const args2 = process.argv[2];
@@ -14,6 +14,9 @@
 // // How to Run the Program => in terminal type : node assignment.js 3 2
 
 
+// ------------------------------------------------------------------------------------------------------------------
+
+
 // promise example
 
 const p1 = new Promise((resolve, reject) => {
@@ -25,53 +28,90 @@ const p1 = new Promise((resolve, reject) => {
 
 const p2 = new Promise((resolve, reject) => {
     setTimeout(() => {
-        resolve("Promise 2 resolved");
+        reject("Promise 2 rejected");
     }, 1000)
 })
 
-p1.then((data) => {
-    console.log("reoleved data is :", data);
-}).catch((err) => {
-    console.log("error is :", err);
-}).finally(() => {
-    console.log("completed p1");
+// p1.then((data) => {
+//     console.log("reoleved data is :", data);
+// }).catch((err) => {
+//     console.log("error is :", err);
+// }).finally(() => {
+//     console.log("completed p1");
+// })
+
+// p2.then((data) => {
+//     console.log("reoleved data is :", data);
+// }).catch((err) => {
+//     console.log("error is :", err);
+// }).finally(() => {
+//     console.log("completed p2");
+// })
+
+
+// // promise.all example  , used when we want to wait for multiple promises to resolve
+// Promise.all([p1, p2]).then((data) => {
+//     console.log("Promise all data is :", data);
+// })
+
+
+// // promise.any example
+// Promise.any([p1,p2]).then((data)=>{
+//     console.log("Promise any data is :", data);
+// })
+
+
+// // direct resolve and reject example
+// Promise.resolve("good morning").then((msg)=>{
+//     console.log("message is :", msg);
+// }).catch((err)=>{
+//     console.log("error is :", err);
+// })
+
+// Promise.reject("good evening").then((msg)=>{
+//     console.log("message is :", msg);
+// }).catch((err)=>{
+//     console.log("error is :", err);
+// })
+
+
+
+// // api fetch example
+// fetch('https://dummyjson.com/auth/login').then(res => res.json()).then(console.log)
+
+
+//--------------------------------------------------------------------------------------------------------------------
+
+
+// async await example
+
+const func1 = async ()=>{
+    const value = await p1;
+    console.log("value from async await is :", value);
+}
+
+// func1();
+
+const func2 = async ()=>{
+    const msg = await fetch('https://dummyjson.com/auth/login');
+    const data = await msg.json();
+    console.log("data from fetch is :", data);
+}
+// func2();
+
+// returning single values 
+async function func3() {
+    return 5;
+}
+func3().then((data)=>{
+    console.log("data from func3 is :", data);
 })
 
-p2.then((data) => {
-    console.log("reoleved data is :", data);
-}).catch((err) => {
-    console.log("error is :", err);
-}).finally(() => {
-    console.log("completed p2");
-})
-
-
-// promise.all example  , used when we want to wait for multiple promises to resolve
-Promise.all([p1, p2]).then((data) => {
-    console.log("Promise all data is :", data);
-})
-
-
-// promise.any example
-Promise.any([p1,p2]).then((data)=>{
-    console.log("Promise any data is :", data);
-})
-
-
-// direct resolve and reject example
-Promise.resolve("good morning").then((msg)=>{
-    console.log("message is :", msg);
+async function func4() {
+    return p2;
+}
+func4().then((data)=>{
+    console.log("data from func4 is :", data);
 }).catch((err)=>{
-    console.log("error is :", err);
-})
-
-Promise.reject("good evening").then((msg)=>{
-    console.log("message is :", msg);
-}).catch((err)=>{
-    console.log("error is :", err);
-})
-
-
-
-// api fetch example
-fetch('https://dummyjson.com/auth/login').then(res => res.json()).then(console.log)
+    console.log("error from func4 is :", err);
+});
