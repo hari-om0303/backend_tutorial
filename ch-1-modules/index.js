@@ -1,7 +1,7 @@
-// // commonjs module import
-// const lib = require('./lib');
+// commonjs module import
+const lib = require('./lib');
 
-// console.log('Result from lib:', lib.sum(3,4) , lib.diff(10,5), lib.product(2,6));
+console.log('Result from lib:', lib.sum(3,4) , lib.diff(10,5), lib.product(2,6));
 
 
 // ES6 module import
@@ -13,8 +13,8 @@ const t1 = performance.now();
 // fs module import
 import fs from 'fs';
 
-// synchronous read
-const data = fs.readFileSync('./demo.txt', 'utf-8');
+// synchronous read   
+const data = fs.readFileSync('./demo.txt', 'utf-8'); //utf-8 is used to read file as string
 console.log('Data from file:', data);
 const t2_sync = performance.now();
 
