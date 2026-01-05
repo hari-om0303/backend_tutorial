@@ -51,6 +51,12 @@ app.get('/' , (req, res)=>{
     res.send('Hello World from Express Server , it is second server');
 })
 
+app.get('/demo/:id' , (req ,res)=>{
+    const productId = req.params.id;
+    res.send(`Product ID from query parameter is ${productId}`);
+    console.log(productId);
+})
+
 app.listen(4000 , ()=>{
     console.log('Server running on port 4000');
 });
