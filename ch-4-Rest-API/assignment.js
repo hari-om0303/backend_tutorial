@@ -53,7 +53,6 @@ app.delete('/qouts/:id', (req, res) => {
     res.status(201).json(qout);
 })
 
-
 app.listen(3000, () => {
     console.log("server is running on port 3000");
 })
