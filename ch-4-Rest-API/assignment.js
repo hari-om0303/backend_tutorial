@@ -17,7 +17,7 @@ app.get('/qouts/:id', (req, res) => {
     const id = +req.params.id;
     const singleqout = qouts.find(p => p.id === id);
     res.send(singleqout);
-})
+}) 
 
 // create 
 app.post('/qouts', (req, res) => {
