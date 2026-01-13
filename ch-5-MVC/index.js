@@ -9,7 +9,6 @@ const userRouter = require('./routes/users2');
 server.use(express.json());
 server.use(express.static('public'));
 
-
 server.use('/products', productRouter.router);
 server.use('/users', userRouter.router);
 
