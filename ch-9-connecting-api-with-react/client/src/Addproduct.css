@@ -1,0 +1,79 @@
+/* Form container */
+.form-horizontal {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Form title */
+.form-horizontal legend {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Each form group */
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+}
+
+/* Labels */
+.control-label {
+  width: 30%;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Input container */
+.col-md-4 {
+  width: 70%;
+}
+
+/* Inputs & selects */
+.form-control {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  transition: border-color 0.2s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Help text */
+.help-block {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* Button */
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 22px;
+  font-size: 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Center button */
+.form-group:last-child {
+  justify-content: center;
+}
