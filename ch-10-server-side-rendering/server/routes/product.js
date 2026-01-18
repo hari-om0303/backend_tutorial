@@ -14,6 +14,7 @@ router
     .delete('/:id', productController.deleteprod)
 
 router.get('/ssr', productController.getAllProductsSSR);    
+router.get('/add', productController.getAddForm);    
 
 
 // exports.router = router;  
