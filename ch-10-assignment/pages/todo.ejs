@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todolist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background: #333;
+            color: white;
+        }
+        .personal { color: blue; }
+        .work { color: green; }
+        .other { color: orange; }
+    </style>
+</head>
+<body>
+
+    <h1>📋 Todolist / Expense Records</h1>
+
+    <% if (todolists.length === 0) { %>
+        <p>No records found.</p>
+    <% } else { %>
+        <table>
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Expense Name</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Discount (%)</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% todolists.forEach(item => { %>
+                    <tr>
+                        <td><%= item.task %></td>
+                        <td><%= item.expence_name %></td>
+                        <td>₹ <%= item.amount %></td>
+                        <td>
+                            <%= item.date 
+                                ? new Date(item.date).toLocaleDateString() 
+                                : 'N/A' %>
+                        </td>
+                        <td><%= item.discount ?? 0 %></td>
+                        <td class="<%= item.type %>">
+                            <%= item.type %>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } %>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+    "todolists": [
+        {
+            "task": "Buy groceries",
+            "expence_name": "Monthly vegetables",
+            "amount": 1200,
+            "date": "2026-01-15",
+            "discount": 5,
+            "type": "personal"
+        },
+        {
+            "task": "Office lunch",
+            "expence_name": "Team lunch meeting",
+            "amount": 3500,
+            "date": "2026-01-16",
+            "discount": 10,
+            "type": "work"
+        },
+        {
+            "task": "Internet bill payment",
+            "expence_name": "Broadband recharge",
+            "amount": 999,
+            "date": "2026-01-10",
+            "discount": 0,
+            "type": "personal"
+        },
+        {
+            "task": "Online course purchase",
+            "expence_name": "Backend development course",
+            "amount": 4500,
+            "date": "2026-01-12",
+            "discount": 20,
+            "type": "other"
+        }
+    ]
+}
