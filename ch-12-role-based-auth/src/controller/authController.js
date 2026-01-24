@@ -21,15 +21,15 @@ const login = async (req,res)=>{
        const user = await User.findOne({username});
 
        if(!user){
-            return res.status(400).json({message: 'Invalid credentials'});
+            return res.status(400).json({message: 'user name or password is incorrect'});
        }
        const isMatch = await bcrypt.compare(password , user.password);
        if(!isMatch){
-        return res.status(400).json({message: 'Invalid credentials'}); 
+        return res.status(400).json({message: 'user name or password is incorrect'}); 
        }
 
        const token = jwt.sign({id:user._id , role: user.role}, process.env.JWT_SECRET , {expiresIn: '1h'});
-
+ 
        res.status(200).json({token});
 
     } catch (err) {

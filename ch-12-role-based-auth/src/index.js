@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv').config();
 const dbConnect = require('./config/dbConnection');
 const authRoutes = require('./routes/authRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 // connect to database
 dbConnect();
@@ -14,6 +15,7 @@ app.use(express.json()); // used to parse or get json data from request body
 
 // routes
 app.use('/api/auth' , authRoutes);
+app.use('/api/users' , userRoutes);
 
 
 
