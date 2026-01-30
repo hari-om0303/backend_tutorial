@@ -18,6 +18,10 @@ app.get('/err', (req ,res)=>{
     abcd = abcd;
 })
 
+app.get('/admin' , (req,res,next)=>{
+       throw new ExpressError(403 , "access to admin is forbidden");
+})
+
 app.get('/api' , checkToken , (req , res)=>{
     res.send('Welcome to the API');
 });
